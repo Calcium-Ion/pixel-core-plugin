@@ -1,0 +1,5 @@
+# 您的token
+token: yourtoken
+# 登录服务的端口，需要保证端口未被占用！
+http:
+  port: 8081

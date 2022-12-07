@@ -1,0 +1,8 @@
+name: PixelCorePlugin
+main: work.caion.plugin.pixelcore.PixelCorePlugin
+author: CaIon
+version: 1.0
+depend:
+  - PlaceholderAPI
+commands:
+  pcore:

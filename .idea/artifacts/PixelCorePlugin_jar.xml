@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PixelCorePlugin:jar">
+    <output-path>$PROJECT_DIR$/../../../../[TestServer]Spigot/plugins</output-path>
+    <root id="archive" name="PixelCorePlugin.jar">
+      <element id="module-output" name="PixelCorePlugin" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/cn/hutool/hutool-all/5.7.22/hutool-all-5.7.22.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
