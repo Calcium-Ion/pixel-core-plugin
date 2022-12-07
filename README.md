@@ -1,4 +1,5 @@
-#PixelCore
+# PixelCore  
+
 用于对接PixelWeb，以及其附属插件的前置  
 内置HttpServer，请在配置文件中修改相关配置
   
