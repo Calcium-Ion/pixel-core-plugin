@@ -55,7 +55,7 @@ public class HttpServerHandler {
         httpServer.addAction("/", new Action() {
             @Override
             public void doAction(HttpServerRequest httpServerRequest, HttpServerResponse httpServerResponse) throws IOException {
-                httpServerResponse.write(ResultUtil.ok("running").toString());
+                httpServerResponse.write(ResultUtil.success("running").toString());
             }
         });
         pixelCoreServer = new PixelCoreServer(httpServer);

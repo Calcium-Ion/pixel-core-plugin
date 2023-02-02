@@ -6,6 +6,7 @@ public class Result {
 
     int code;
     String msg;
+    JSONObject data;
 
     public Result(int code, String msg) {
         this.code = code;
@@ -28,10 +29,20 @@ public class Result {
         this.msg = msg;
     }
 
+    public JSONObject getData() {
+        return data;
+    }
+
+    public void setData(JSONObject data) {
+        this.data = data;
+    }
+
     public JSONObject toJson() {
         JSONObject jsonObject = new JSONObject();
         jsonObject.set("code", code);
         jsonObject.set("msg", msg);
+        jsonObject.set("data", data);
+
         return jsonObject;
     }
 

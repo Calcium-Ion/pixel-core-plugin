@@ -2,7 +2,7 @@ package work.caion.plugin.pixelcore.result;
 
 public class ResultUtil {
 
-    public static Result ok(String msg) {
+    public static Result success(String msg) {
         return new Result(200, msg);
     }
 

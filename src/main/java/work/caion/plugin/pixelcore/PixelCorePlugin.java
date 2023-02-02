@@ -3,6 +3,7 @@ package work.caion.plugin.pixelcore;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
+import work.caion.plugin.pixelcore.action.ActionHandler;
 import work.caion.plugin.pixelcore.httpclient.PixelCoreClient;
 import work.caion.plugin.pixelcore.httpserver.HttpServerHandler;
 
@@ -14,6 +15,7 @@ public class PixelCorePlugin extends JavaPlugin {
     Logger logger;
 
     private static PixelCorePlugin instance;
+    private static ActionHandler actionHandler;
     public String token;
     public String sid;
 
@@ -21,10 +23,15 @@ public class PixelCorePlugin extends JavaPlugin {
         return instance;
     }
 
+    public static ActionHandler getActionHandler() {
+        return actionHandler;
+    }
+
     @Override
     public void onEnable() {
         instance = this;
         logger = getLogger();
+        actionHandler = new ActionHandler();
         saveDefaultConfig();
         reload();
     }
@@ -34,8 +41,7 @@ public class PixelCorePlugin extends JavaPlugin {
         logger.info("================" + prefix + "================");
         logger.info(prefix + "正在卸载插件");
         try {
-            logger.info("正在关闭PixelHttpServer");
-            HttpServerHandler.shutdown();
+            PixelCoreClient.stop();
             logger.info(prefix + "卸载完成，感谢您的使用");
         } catch (Exception e) {
             e.printStackTrace();
