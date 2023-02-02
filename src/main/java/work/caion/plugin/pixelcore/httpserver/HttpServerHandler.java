@@ -1,4 +1,4 @@
-package work.caion.plugin.pixelcore.server;
+package work.caion.plugin.pixelcore.httpserver;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.SecureUtil;
@@ -7,13 +7,11 @@ import cn.hutool.http.server.HttpServerRequest;
 import cn.hutool.http.server.HttpServerResponse;
 import cn.hutool.http.server.SimpleServer;
 import cn.hutool.http.server.action.Action;
-import cn.hutool.http.server.filter.HttpFilter;
 import com.sun.net.httpserver.Filter;
 import com.sun.net.httpserver.HttpExchange;
 import work.caion.plugin.pixelcore.result.ResultUtil;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 
 public class HttpServerHandler {
 

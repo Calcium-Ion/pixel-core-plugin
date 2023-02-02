@@ -1,5 +1,3 @@
 # 您的token
-token: yourtoken
-# 登录服务的端口，需要保证端口未被占用！
-http:
-  port: 8081
+sid: 6
+token: pcyy-7c4025lh23-3sbn

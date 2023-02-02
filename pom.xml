@@ -8,7 +8,6 @@
     <artifactId>PixelCorePlugin</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
@@ -29,7 +28,7 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.7.22</version>
+            <version>5.8.11</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/fr.xephi/authme -->

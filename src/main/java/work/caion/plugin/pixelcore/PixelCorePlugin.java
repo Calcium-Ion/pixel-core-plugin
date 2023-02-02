@@ -1,10 +1,10 @@
 package work.caion.plugin.pixelcore;
 
-import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
-import work.caion.plugin.pixelcore.server.HttpServerHandler;
+import work.caion.plugin.pixelcore.httpclient.PixelCoreClient;
+import work.caion.plugin.pixelcore.httpserver.HttpServerHandler;
 
 import java.util.logging.Logger;
 
@@ -15,6 +15,7 @@ public class PixelCorePlugin extends JavaPlugin {
 
     private static PixelCorePlugin instance;
     public String token;
+    public String sid;
 
     public static PixelCorePlugin getInstance() {
         return instance;
@@ -58,21 +59,31 @@ public class PixelCorePlugin extends JavaPlugin {
         logger.info("================" + prefix + "================");
         logger.info( "正在加载插件");
         reloadConfig();
-        int port = getConfig().getInt("http.port");
+//        int port = getConfig().getInt("http.port");
         this.token = getConfig().getString("token");
-        if (HttpServerHandler.isStart()) {
-            logger.info("正在关闭PixelHttpServer");
-            HttpServerHandler.shutdown();
-        }
-        HttpServerHandler.create(port, this.token);
-        logger.info("正在启动PixelHttpServer");
+        this.sid = getConfig().getString("sid");
+//        if (HttpServerHandler.isStart()) {
+//            logger.info("正在关闭PixelHttpServer");
+//            HttpServerHandler.shutdown();
+//        }
+//        HttpServerHandler.create(port, this.token);
+//        logger.info("正在启动PixelHttpServer");
+//        try {
+//            HttpServerHandler.start();
+//            logger.info(prefix + "PixelHttpServer启动完成");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            logger.info(prefix + "PixelHttpServer启动失败，某些功能将不可用");
+//        }
+
+        logger.info(prefix + "正在连接PixelWeb服务");
+        PixelCoreClient.create(this.sid, this.token);
         try {
-            HttpServerHandler.start();
-            logger.info(prefix + "启动完成");
+            PixelCoreClient.start();
+            logger.info(prefix + "连接PixelWeb服务成功");
         } catch (Exception e) {
             e.printStackTrace();
-            logger.info(prefix + "启动失败，服务器即将关闭！！！");
-            Bukkit.shutdown();
+            logger.info(prefix + "连接PixelWeb服务失败，请检查您的sid和token是否正确！！！");
         }
         logger.info("================" + prefix + "================");
     }

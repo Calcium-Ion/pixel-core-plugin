@@ -1,7 +1,6 @@
-package work.caion.plugin.pixelcore.server;
+package work.caion.plugin.pixelcore.httpserver;
 
 import cn.hutool.http.server.action.Action;
-import org.bukkit.Bukkit;
 import work.caion.plugin.pixelcore.PixelCorePlugin;
 
 
