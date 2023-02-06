@@ -68,19 +68,6 @@ public class PixelCorePlugin extends JavaPlugin {
 //        int port = getConfig().getInt("http.port");
         this.token = getConfig().getString("token");
         this.sid = getConfig().getString("sid");
-//        if (HttpServerHandler.isStart()) {
-//            logger.info("正在关闭PixelHttpServer");
-//            HttpServerHandler.shutdown();
-//        }
-//        HttpServerHandler.create(port, this.token);
-//        logger.info("正在启动PixelHttpServer");
-//        try {
-//            HttpServerHandler.start();
-//            logger.info(prefix + "PixelHttpServer启动完成");
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            logger.info(prefix + "PixelHttpServer启动失败，某些功能将不可用");
-//        }
 
         logger.info(prefix + "正在连接PixelWeb服务");
         PixelCoreClient.create(this.sid, this.token);
